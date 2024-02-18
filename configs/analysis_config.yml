@@ -7,4 +7,4 @@ plot_config:
     width: '10'
     height: '5'
 
-default_save_path: "/Top_tracks_popularity.png"
+default_save_path: "Top_tracks_popularity.png"

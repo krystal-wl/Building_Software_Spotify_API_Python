@@ -113,6 +113,10 @@ class Analysis():
         
         self.dataset_tracks_popularity = track_popularity
         self.dataset_track_names = track_names
+        # after loading the data, assert that the result is as expected
+        assert isinstance(self.dataset_tracks_popularity, list), "Expected dataset_tracks_popularity to be a list"
+        assert isinstance(self.dataset_track_names, list), "Expected dataset_track_names to be a list"
+        assert len(self.dataset_tracks_popularity) == len(self.dataset_track_names), "Mismatch in lengths of track popularity and names lists"
 
     def compute_analysis(self) -> Any:
         '''Analyze previously-loaded data.

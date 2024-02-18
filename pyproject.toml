@@ -9,7 +9,7 @@ authors = [
 ]
 description = "A very basic Python package"
 version = "0.1.0"
-dependencies = ["matplotlib", "numpy", "logging", "yaml", "base64"]
+dependencies = ["matplotlib", "numpy", "logging", "yaml", "base64", "pytest"]
 requires-python = ">=3.10.0"
 readme = "README.md"
 classifiers = [
