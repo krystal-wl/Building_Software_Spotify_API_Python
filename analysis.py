@@ -3,7 +3,7 @@ import base64
 import requests
 import yaml
 import logging
-import numpy 
+import numpy as np
 import matplotlib.pyplot as plt
 
 class Analysis():
@@ -54,7 +54,7 @@ class Analysis():
 
         self.config = config
 
-    def load_data(self, top_tracks_url: str, headers: dict) -> None:
+    def load_data(self) -> None:
         ''' Retrieve data from the GitHub API
 
         This function makes an HTTPS request to the GitHub API and retrieves your selected data. The data is
@@ -105,11 +105,10 @@ class Analysis():
 
         # Extract popularity and track names from the response
         track_popularity = []
-        for track in top_tracks_data:
-            track_popularity.append(track['popularity'])
-        
         track_names = []
-        for track in top_tracks_data:
+
+        for track in top_tracks_data['tracks']:
+            track_popularity.append(track['popularity'])
             track_names.append(track['name'])
         
         self.dataset_tracks_popularity = track_popularity
@@ -118,8 +117,8 @@ class Analysis():
     def compute_analysis(self) -> Any:
         '''Analyze previously-loaded data.
 
-        This function runs an analytical measure of your choice (mean, median, linear regression, etc...)
-        and returns the data in a format of your choice.
+        This function runs an analytical measure of mean
+        and returns an average of loaded data
 
         Parameters
         ----------
@@ -130,11 +129,11 @@ class Analysis():
         analysis_output : Any
 
         '''
-        return self.dataset_tracks_popularity.mean()
+        return np.mean(self.dataset_tracks_popularity)
     
     
     
-    def plot_data(self, save_path: str = None) -> plt.Figure:
+    def plot_data(self) -> plt.Figure:
         
         '''
         Plot the top tracks data.
@@ -159,16 +158,15 @@ class Analysis():
         plt.title(self.config['plot_config']['title'])
 
         # initialize logging module
-        logging.basicConfig(
-            handlers=[logging.StreamHandler(), logging.FileHandler('Top_Tracks_Popularity.log')],
+        logging.basicConfig(level=logging.INFO,
+            handlers=[logging.StreamHandler(), logging.FileHandler('Top_tracks_popularity.log')],
         )
 
-        # Specify the save path
         # Specify the save path
         save_path = self.config['default_save_path']
 
         try:
-            plt.savefig('save_path')
+            plt.savefig(save_path)
             logging.info(f"Plot saved as {save_path}")
         except Exception as e:
             e.add_note("Failed to save the plot")
