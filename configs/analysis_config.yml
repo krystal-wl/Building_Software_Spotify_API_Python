@@ -1,0 +1,10 @@
+plot_color: 'skyblue'
+plot_config:
+  title: 'Top Tracks Popularity'
+  xlabel: 'Popularity'
+  ylabel: 'Top Tracks'
+  figure_size: 
+    width: '10'
+    height: '5'
+
+default_save_path: "/Top_tracks_popularity.png"

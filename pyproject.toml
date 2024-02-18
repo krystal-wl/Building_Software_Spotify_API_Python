@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "analysis"
+authors = [
+    {name = "Krystal Lin", email = "krystal.lin.work@gmail.com"},
+]
+description = "A very basic Python package"
+version = "0.1.0"
+dependencies = ["matplotlib", "numpy", "logging", "yaml", "base64"]
+requires-python = ">=3.10.0"
+readme = "README.md"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
