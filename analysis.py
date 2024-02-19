@@ -171,7 +171,7 @@ class Analysis():
         save_path = self.config['default_save_path']
 
         try:
-            plt.savefig(save_path)
+            plt.savefig(save_path, bbox_inches='tight')
             logging.info(f"Plot saved as {save_path}")
         except Exception as e:
             e.add_note("Failed to save the plot")
