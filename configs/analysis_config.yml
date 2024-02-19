@@ -4,7 +4,7 @@ plot_config:
   xlabel: 'Popularity'
   ylabel: 'Top Tracks'
   figure_size: 
-    width: '10'
+    width: '15'
     height: '5'
 
 default_save_path: "Top_tracks_popularity.png"
