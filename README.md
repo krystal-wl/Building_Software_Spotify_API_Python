@@ -2,14 +2,14 @@
 
 ## Overview
 
-This Python script, `analysis.py`, is designed to perform data analysis on Spotify's top tracks. It retrieves data via the Spotify API, conducts analysis to compute average track popularity, and generates a plot visualizing the data. Additionally, it notifies the user upon completion of analysis via the ntfy.sh service.
+The Analysis package is a Python library designed for performing and visualizing data analysis, specifically tailored for Spotify's top tracks data. It supports data retrieval from the Spotify API, computation of analytical metrics, visualization of analysis results, and sending notifications upon completion of analysis tasks.
 
 ## Features
 
-- Data retrieval from Spotify API
-- Analysis of track popularity
-- Data visualization with matplotlib
-- Notification on analysis completion
+- Data retrieval from the Spotify API
+- Computation of analytical metrics such as track popularity
+- Visualization of analysis results through plots
+- Notification of analysis completion via ntfy.sh service
 
 ## Prerequisites
 
@@ -25,48 +25,48 @@ Before you begin, ensure you have met the following requirements:
 To install the package directly from GitHub, use the following command:
 
 ```bash
-!pip install git+https://github.com/user/yourteamrepo
+!pip install git+https://github.com/Krystal-WL/Building_software_assignment
 ```
-
 
 ## Configuration
 Before using the Analysis package, you need to set up the necessary configuration files:
 
-* System and User Configuration: Create system_config.yml and user_config.yml in a configs directory with appropriate settings.
-
-* Spotify API Credentials: Ensure you have a secrets.yml file with your Spotify client ID and secret:
-  ```bash
-  CLIENT_ID: 'your-spotify-client-id'
-  CLIENT_SECRET: 'your-spotify-client-secret'
-  ```
-* Analysis Configuration: The config.yml should include parameters relevant to your analysis, such as API tokens, plot configurations, and notification settings.
+* Spotify API Credentials: Securely store your Spotify API credentials in a secrets.yml file.
+* Analysis Configuration: Define your analysis parameters in configs/analysis_config.yml. This file should specify details such as plot configurations and notification settings.
 
 ## Usage
 After installing the package, you can use it in your projects as follows:
   
   ```bash
-  from yourteamrepo import Analysis
+  from Building_software_assignment import Analysis
   
-  analysis_obj = Analysis('config.yml')
+  # Initialize the analysis object with your configuration
+  analysis_obj = Analysis('configs/analysis_config.yml')
+
+  # Load data from the configured sources
   analysis_obj.load_data()
-  
+
+  # Perform the analysis and print the output
   analysis_output = analysis_obj.compute_analysis()
   print(analysis_output)
-  
-  analysis_figure = analysis_obj.plot_data()
-  ```
 
+  # Plot the analysis results
+  analysis_figure = analysis_obj.plot_data()
+
+  # Send a notification upon completion
+  analysis_notify = analysis_obj.notify_done('Analysis completed')
+
+  ```
 
 This code snippet demonstrates how to initialize the analysis, load data, compute the analysis, and plot the results.
 
 ## Contributing
-We welcome contributions to improve the Analysis package. Please refer to our CONDUCT.md for guidelines on contributions and community behavior.
+Contributions to the Analysis package are welcome. Please consult our CONDUCT.md for guidelines on how to contribute in a manner that promotes a respectful and welcoming community.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the 'LICENSE' file for details.
 
 ## Contact
 Krystal Lin: krystal.lin.work@gmail.com
 
 Project Link: https://github.com/Krystal-WL/Building_software_assignment
-
