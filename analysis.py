@@ -38,7 +38,9 @@ class Analysis():
 
         '''
 
-        CONFIG_PATHS = ['configs/system_config.yml', 'configs/user_config.yml']
+        dirname = os.path.dirname(__file__)
+        CONFIG_PATHS = [os.path.join(dirname, 'configs/system_config.yml'), 
+                os.path.join(dirname, 'configs/user_config.yml')]
 
         # add the analysis config to the list of paths to load
         paths = CONFIG_PATHS + [analysis_config]
