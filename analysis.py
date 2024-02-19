@@ -71,7 +71,7 @@ class Analysis():
 
         '''
         # load spotify acccess token from yaml file
-        with open('secrets.yml') as f:
+        with open('configs/secrets.yml') as f:
             secrets = yaml.safe_load(f)
 
         client_id = secrets['CLIENT_ID'];
