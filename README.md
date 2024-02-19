@@ -38,7 +38,7 @@ Before using the Analysis package, you need to set up the necessary configuratio
 After installing the package, you can use it in your projects as follows:
   
   ```bash
-  from Building_software_assignment import Analysis
+  from analysis import Analysis
   
   # Initialize the analysis object with your configuration
   analysis_obj = Analysis('configs/analysis_config.yml')
