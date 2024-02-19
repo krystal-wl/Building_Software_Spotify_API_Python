@@ -9,7 +9,7 @@ authors = [
 ]
 description = "Analysis Python package"
 version = "0.1.0"
-dependencies = ["matplotlib", "numpy", "yaml", "pytest"]
+dependencies = ["matplotlib", "numpy", "PyYAML", "pytest"]
 requires-python = ">=3.10.0"
 readme = "README.md"
 classifiers = [
