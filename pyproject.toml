@@ -7,9 +7,9 @@ name = "analysis"
 authors = [
     {name = "Krystal Lin", email = "krystal.lin.work@gmail.com"},
 ]
-description = "A very basic Python package"
+description = "Analysis Python package"
 version = "0.1.0"
-dependencies = ["matplotlib", "numpy", "logging", "yaml", "base64", "pytest"]
+dependencies = ["matplotlib", "numpy", "logging", "yaml", "pytest"]
 requires-python = ">=3.10.0"
 readme = "README.md"
 classifiers = [
